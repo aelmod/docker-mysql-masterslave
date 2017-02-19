@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+   db1:
+     build: db1
+     ports:
+       - "3307:3306"
+     volumes:
+       - ./db1_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: wordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+
+   db2:
+     build: db2
+     ports:
+       - "3308:3306"
+     volumes:
+       - ./db2_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: wordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
