@@ -7,12 +7,13 @@ services:
        - "3307:3306"
      volumes:
        - ./db1_data:/var/lib/mysql
+       - ./db1/my.cnf:/etc/mysql/conf.d/my.cnf
      restart: always
      environment:
-       MYSQL_ROOT_PASSWORD: wordpress
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD: wordpress
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_DATABASE: origin
+       MYSQL_USER: user1
+       MYSQL_PASSWORD: root
 
 
    db2:
@@ -21,9 +22,9 @@ services:
        - "3308:3306"
      volumes:
        - ./db2_data:/var/lib/mysql
+       - ./db2/my.cnf:/etc/mysql/conf.d/my.cnf
      restart: always
      environment:
-       MYSQL_ROOT_PASSWORD: wordpress
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD: wordpress
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_USER: user1
+       MYSQL_PASSWORD: root
